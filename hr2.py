@@ -1,9 +1,8 @@
+# desired columns: V    log(Teff1)
+
 import pandas as pd
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
+import plotly.express as px
 hr_data = pd.read_csv('/users/danielbarton/github/hr2/debs.dat')
-#print the result
-#hr_data[:10]
-    lines = f.readlines()
-    x = [)line.split()[18]] for line in lines]
-    y = [(line.split()[20]) for line in lines]
-plt.plot(x ,y,'o')
+fig = px.scatter(hr_data, x= 'V', y= 'log(Teff1)')
+fig.show()
