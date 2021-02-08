@@ -1,8 +1,14 @@
-from matplotlib import pyplot
-pyplot.plot ([1,2,3,4],[10,20,30,40], label='how much pole do you smoke')
-pyplot.plot ([5,7,9,11],[200,300,400,500], label='how much pole does your mom smoke')
-pyplot.title('Big Graph')
-pyplot.xlabel('Days in a month')
-pyplot.ylabel('Number of poles smoked on that day')
-pyplot.legend()
-#this is a test
+# desired columns: V    log(Teff1)
+
+import pandas as pd
+import plotly.express as px
+import plotly.graph_objects as go
+import numpy as np
+hr_data = pd.read_csv('/users/danielbarton/github/hr2/debs3.csv')
+fig = px.scatter(hr_data, x= 'log(Teff1)', y= 'log(L1)',
+            title = "DEBCat: well-studied eclipsing binaries",
+            labels = {'log(Teff1)': "Temperature (K)", 'log(L1)': "Luminosity"},
+            template="simple_white",
+            )
+
+fig.show()
